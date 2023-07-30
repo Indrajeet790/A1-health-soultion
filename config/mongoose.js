@@ -6,10 +6,10 @@
 // );
 
 const mongoose = require("mongoose");
-// require("dotenv/config");
+require("dotenv/config");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/health_tracker")
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("successfully connected to database");
   })
