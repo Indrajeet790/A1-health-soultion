@@ -4,15 +4,13 @@ const bodyParser = require("body-parser");
 require("dotenv/config");
 const initiateCall = require("./controllers/makeCall");
 
-const port = 8000; // Change to your preferred port
+const port = 8000;
 const db = require("./config/mongoose");
 
 app.use(express.urlencoded());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// make CALL Routes
-// app.use("/", require("./routes/makecall"));
 // create patient
 app.use("/", require("./routes/patientRoutes"));
 
