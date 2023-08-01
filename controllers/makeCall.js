@@ -9,7 +9,7 @@ module.exports.makeCall = (req, res) => {
 
   twilio.calls
     .create({
-      url: "http://demo.twilio.com/docs/voice.xml",
+      url: "https://handler.twilio.com/twiml/EH798272d65880d3555fcad389f8b13049",
       // A TwiML Bin URL that contains the instructions for the call (example: saying a message)
       to: +917903605302,
       from: +14705180842,
