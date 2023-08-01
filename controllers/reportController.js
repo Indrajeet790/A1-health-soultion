@@ -1,6 +1,7 @@
 const PatientReport = require("../models/report");
 const Patient = require("../models/patient");
 
+// create patient  details 
 module.exports.createPatientReport = async (req, res) => {
   try {
     const report = await PatientReport.create(req.body);
@@ -10,6 +11,7 @@ module.exports.createPatientReport = async (req, res) => {
   }
 };
 
+// find patient report using phone number if phone number matched then report is viewed
 module.exports.PatientReport = async (req, res) => {
   try {
     const patient = await Patient.findOne({ phone: req.query.phone });

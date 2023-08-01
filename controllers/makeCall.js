@@ -1,4 +1,3 @@
-// const cron = require("node-cron");
 const phoneNumberToCall = process.env.PHONE_NUMBER_TO_RECEIVE;
 const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -11,7 +10,8 @@ const twilio = require("twilio")(accountSid, authToken);
 function initiateCall() {
   twilio.calls
     .create({
-      url: process.env.URL, // A TwiML Bin URL that contains the instructions for the call (example: saying a message)
+      url: "https://handler.twilio.com/twiml/EH798272d65880d3555fcad389f8b13049",
+      // A TwiML Bin URL that contains the instructions for the call (example: saying a message)
       to: phoneNumberToCall,
       from: twilioPhoneNumber,
     })
@@ -25,7 +25,7 @@ function initiateCall() {
 
 // schedule the remainder call daily 9 am for patient
 const cron = require("node-cron");
-cron.schedule("14 * * *", () => {
+cron.schedule("48 15 * * *", () => {
   initiateCall();
 });
 

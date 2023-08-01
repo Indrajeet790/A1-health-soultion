@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const reportController = require("../controllers/reportController");
 
-router.post("/create/report", reportController.createPatientReport);
-router.get("/get/report", reportController.PatientReport);
+router.post("/create/reports", reportController.createPatientReport);
+router.get("/get/reports", reportController.PatientReport);
 
 module.exports = router;
